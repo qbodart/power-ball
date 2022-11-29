@@ -1,0 +1,56 @@
+.path {
+    --path-length: 100px;
+    position: relative;
+}
+
+.path.horizontal {
+    border-top: 1px solid #000;
+    width: var(--path-length);
+}
+
+.path.vertical {
+    border-left: 1px solid #000;
+    height: var(--path-length);
+}
+
+.ball {
+    --ball-size: 10px;
+    width: var(--ball-size);
+    height: var(--ball-size);
+    border-radius: 50%;
+    background-color: rgba($color: #196535, $alpha: 0.85);
+    position: absolute;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.path.horizontal .ball {
+    animation-name: move-horizontal;
+    top: calc(0px - var(--ball-size) / 2);
+    left: calc(0% - var(--ball-size) / 2);
+}
+
+.path.vertical .ball {
+    animation-name: move-vertical;
+    top: calc(0% - var(--ball-size) / 2);
+    left: calc(0px - var(--ball-size) / 2);
+}
+
+@keyframes move-horizontal {
+    0% {
+        left: calc(0% - var(--ball-size) / 2);
+    }
+    100% {
+        left: calc(100% - var(--ball-size) / 2);
+    }
+}
+
+@keyframes move-vertical {
+    0% {
+        top: calc(0% - var(--ball-size) / 2);
+    }
+    100% {
+        top: calc(100% - var(--ball-size) / 2);
+    }
+}

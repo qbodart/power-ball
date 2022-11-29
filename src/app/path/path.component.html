@@ -1,0 +1,4 @@
+<div class="path" [ngClass]="[isHorizontal ? 'horizontal' : 'vertical']" [style.--path-length.px]="length">
+    <div class="ball" [style.--ball-size.px]="ballSize" [style.animation-duration]="animationDuration"
+        [style.animation-direction]="isReverse ? 'reverse' : 'normal'"></div>
+</div>
